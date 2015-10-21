@@ -13,8 +13,8 @@
   <% end %>
 
   <%= f.input :name %>
-  <strong> Start Date: </strong><input id="convention_start_date" type="text"><br>
-  <strong> End Date: </strong><input id="convention_end_date" type="text">
+  <strong> Start Date: </strong><input id="convention_start_date" type="text" class="datetime optional" name="convention[start_date]"><br>
+  <strong> End Date: </strong><input id="convention_end_date" class="datetime optional" name="convention[end_date]"><br>
 
   <div class="actions">
     <%= f.submit %>
@@ -22,6 +22,12 @@
 <% end %>
 
 <script>
-jQuery('#convention_start_date').datetimepicker();
-jQuery('#convention_end_date').datetimepicker();
+jQuery('#convention_start_date').datetimepicker(
+{
+	format:'Y-m-d h:m:00'
+});
+jQuery('#convention_end_date').datetimepicker(
+{
+	format:'Y-m-d h:m:00'
+});
 </script>
